@@ -1,0 +1,19 @@
+.navbar-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* space under text */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--active-nav);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-link.active::after {
+    width: 100%; /* underline expands fully when active */
+  }

@@ -1,0 +1,185 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fluid typography */
+html {
+  /* Base scales between ~16px and ~18px depending on viewport width */
+  font-size: clamp(15.5px, 1.6vw, 18px);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Better default line-height and font rendering */
+body {
+  margin: 0;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Avoid accidental horizontal scroll */
+}
+
+/* Media should be fluid */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make iframes responsive when wrapped */
+.responsive-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+}
+.responsive-embed > iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border: 0;
+}
+
+/* Utility: responsive container with safe padding */
+.container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+/* Utility: responsive grid */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+/* 2 columns on medium, 3+ on large if needed */
+@media (min-width: 480px) {
+  .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 768px) {
+  .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* Utility: stack-to-row for flex layouts */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .stack.md-row { flex-direction: row; align-items: center; }
+}
+
+/* Buttons auto-wrap on small screens */
+button, .btn {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Tables: make them scrollable on small screens */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Forms: larger touch targets on mobile */
+input, select, textarea, button {
+  font: inherit;
+  padding: 0.6em 0.8em;
+}
+
+/* Headings scale with viewport */
+h1 { font-size: clamp(1.8rem, 4.5vw, 3rem); line-height: 1.15; }
+h2 { font-size: clamp(1.5rem, 3.6vw, 2.25rem); line-height: 1.2; }
+h3 { font-size: clamp(1.25rem, 2.8vw, 1.75rem); }
+h4, h5, h6 { line-height: 1.25; }
+
+/* Cards: consistent padding and rounded edges */
+.card {
+  border-radius: 1rem;
+  padding: clamp(0.875rem, 2vw, 1.25rem);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* Spacing utilities */
+.section {
+  padding-block: clamp(2rem, 6vw, 5rem);
+}
+/* Clamp side padding on common hero/section wrappers */
+.section-inner {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+/* Navbars: stack on mobile */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+}
+.navbar a {
+  text-decoration: none;
+}
+/* If there's an explicit .nav-items container, allow wrap */
+.nav-items {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+/* Prevent media/content from touching edges on small screens */
+.p-safe {
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Images with text: avoid overflow */
+.figure {
+  display: grid;
+  gap: .75rem;
+}
+@media (min-width: 768px) {
+  .figure.side {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* Footer links wrap gracefully */
+footer, .footer {
+  overflow-wrap: anywhere;
+}
+
+/* High-density displays: crisper images */
+@media (min-resolution: 2dppx) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* --- Breakpoints for specific fine tuning if needed --- */
+@media (max-width: 479.98px) {
+  /* Small phones */
+  .hide-xs { display: none !important; }
+}
+@media (min-width: 480px) and (max-width: 767.98px) {
+  /* Large phones */
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  /* Tablets */
+}
+@media (min-width: 1024px) {
+  /* Desktops */
+}

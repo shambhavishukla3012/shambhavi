@@ -1,0 +1,674 @@
+:root {
+  --background: #f8fafc;
+  --section-bg: #e2e8f0;
+  --off-white: #ffffff;
+  --mint-bg: #e2e8f0;
+  --light-green: #2ec4b6;
+  --medium-green: #2ec4b6;
+  --dark-green: #219e91;
+  --accent-green: #2ec4b6;
+  --golden: #7f8fa6; /* Muted steel blue */
+  --light-golden: #aab6c5; /* Lighter slate-metal tone */
+  --dark-golden: #5c6b7b;
+  --silver: #c0c0c0;
+  --light-silver: #e1e1e1;
+  --dark-silver: #a5a5a5;
+  --blue: #4a4e69;
+  --light-blue: #a0aec0;
+  --primary-text: #22223b;
+  --secondary-text: #4a4e69;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --hover-bg: #f1f5f9;
+  --active-nav: #2ec4b6;
+}
+
+[data-theme="dark"] {
+  --background: #121212;
+  --section-bg: #1a1a1a;
+  --off-white: #1e1e1e;
+  --mint-bg: #1e1e1e;
+  --light-green: #2ec4b6; /* Muted accent */
+  --medium-green: #2ec4b6; /* Consistent accent */
+  --dark-green: #219e91; /* Darker version of accent */
+  --accent-green: #2ec4b6;
+  --golden: #7f8fa6; /* Muted steel blue */
+  --light-golden: #aab6c5; /* Lighter slate-metal tone */
+  --dark-golden: #5c6b7b;
+  --silver: #a0a0a0;
+  --light-silver: #b5b5b5;
+  --dark-silver: #757575;
+  --blue: #f9f9f9;
+  --light-blue: #6c7a89;
+  --primary-text: #f1f5f9;
+  --secondary-text: #cbd5e1;
+  --border-color: #2c2c2c;
+  --card-bg: #232323;
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --navbar-bg: rgba(18, 18, 18, 0.95);
+  --hover-bg: #2a2a2a;
+  --active-nav: #2ec4b6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: inherit;
+  background: var(--background);
+  color: var(--primary-text);
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 15px; /* or 14px for slightly smaller scale */
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--primary-text);
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* section {
+
+} */
+/* Default (desktop/tablet): each section fills entire viewport and centers content */
+section {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Avoid horizontal scroll */
+  height: 110vh; /* Fill the viewport vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ==== MID-SIZE OVERRIDE (700px–1400px) ==== */
+@media (min-width: 700px) {
+  section {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 80px 20px !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+section h2 {
+  font-size: 42px !important;
+  line-height: 1.2; 
+  margin-bottom: 10px; 
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Add padding if needed */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Skills Section (desktop + large tablet) */
+#skills {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 22px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: visible; 
+}
+
+/* ==== MID-SIZE OVERRIDE (700px–1400px) ==== */
+
+@media (min-width: 700px) {
+  #skills {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px !important;
+  }
+
+  #skills .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+}
+
+/* Projects Section */
+#projects {
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 25px;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contact Section */
+#contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 10px;
+  max-width: 100vw;
+  justify-content: center;
+  box-sizing: border-box;
+}
+::placeholder {
+  font-size: 19px;
+}
+
+@media (max-width: 426px) {
+  ::placeholder {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 375px) {
+  ::placeholder {
+    font-size: 12px;
+  }
+}
+@media (min-width: 320px) {
+  ::placeholder {
+    font-size: 10px;
+  }
+}
+
+/* Education & Experience Section */
+#education-experience {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  scroll-margin-top: 15px;
+  justify-content: center;
+  /* padding: 15px; */
+  box-sizing: border-box;
+}
+
+#education-experience .timeline-container {
+  flex: 1; /* Allow timeline to grow */
+  width: 100%;
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+  max-height: 70vh; /* A∂djust height for timeline */
+}
+
+@media (min-width: 767px) {
+  #education-experience .timeline-container {
+    margin-left: 10vw; /* Adjust for mid-size screens */
+  }
+}
+
+/* For smaller screens, let sections expand so content isn't cut off */
+@media (max-width: 767px) {
+  section {
+    width: 100%; /* Still full width */
+    min-height: auto; /* Let section expand in height */
+    overflow: visible; /* Show all content on mobile */
+  }
+  .card {
+    width: 90%;
+  }
+}
+
+/* For smaller screens, let sections expand so content isn't cut off */
+@media (max-width: 767px) {
+  section {
+    width: 100%; /* Still full width */
+    height: auto; /* Let section expand in height */
+    overflow: visible; /* Show all content on mobile */
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(1, 38, 35, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--medium-green);
+  border-color: var(--medium-green);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(2, 124, 131, 0.3);
+}
+
+/* Active section in viewport indicator for navbar */
+.section-active {
+  color: var(--active-nav) !important;
+  font-weight: 600 !important;
+}
+
+.section-indicator {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@media (max-width: 600px) {
+  .projects-carousel {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .project-card-wrapper {
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+    width: 95vw !important;
+    box-sizing: border-box;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  .project-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+}
+/* ==== MID-SIZE PROJECTS (700px–1400px) ==== */
+@media (min-width: 720px) {
+  .projects-carousel {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    gap: 16px;
+  }
+
+  /* Instead of forcing 100vw, show two cards per row roughly */
+  .project-card-wrapper {
+    flex: 0 0 calc(50% - 20px) !important;
+    width: calc(50% - 20px) !important;
+    margin: 10px !important;
+    box-sizing: border-box;
+  }
+  .project-card {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+/* ==== SMALLER TABLETS / LARGE PHONES (≤699px) ==== */
+@media (max-width: 789px) {
+  .projects-carousel {
+    padding-left: 8px;
+    padding-right: 8px;
+    gap: 12px;
+  }
+  .project-card-wrapper {
+    flex: 0 0 95vw !important;
+    max-width: 95vw !important;
+    width: 95vw !important;
+    margin: 0 auto 20px auto !important;
+    box-sizing: border-box;
+  }
+  .project-card {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  body,
+  html {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+  }
+  .container,
+  .main,
+  .content,
+  .section {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  nav,
+  header,
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Add more selectors as needed based on your layout */
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body,
+  html {
+    font-size: 18px;
+  }
+  .container,
+  .main,
+  .content,
+  .section {
+    padding: 20px;
+    width: 95%;
+  }
+  .project-image-container {
+    height: 180px !important; /* Or whatever fixed value you prefer */
+    max-height: 100px !important;
+    min-height: 100px !important;
+  }
+  .project-image {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .project-card-wrapper {
+    flex: 0 0 100% !important;
+    width: 340px !important;
+    max-width: 100%;
+    height: auto !important;
+    margin: 2px !important;
+    box-sizing: border-box;
+  }
+  .project-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .project-image-container {
+    width: 100%;
+    height: 180px !important;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f5f5f5;
+    /* Remove min-height/max-height! */
+  }
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.project-card {
+  width: 320px; /* or 100% with max-width: 320px; */
+  max-width: 98vw;
+}
+
+.card {
+  width: 70vw; /* or 100% with max-width: 320px; */
+  max-width: 98vw;
+}
+
+.carousel-indicators {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* push to right */
+  transform: translateY(-50%);
+  flex-direction: column; /* stack vertically */
+  gap: 8px; /* spacing between dots */
+  margin: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #000; /* default */
+  opacity: 0.3;
+  border: none;
+}
+
+.carousel-indicators .active {
+  background-color: #f28c8c; /* active dot color */
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    min-height: auto !important; /* don't force height */
+  }
+
+  .carousel-item h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .carousel-item img {
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
+
+/* Fix min height for slides */
+.project-slide {
+  min-height: 60vh;
+}
+
+/* Text section */
+.project-text {
+  background-color: #c1d3d1;
+  flex: 1;
+  color: #fff;
+  overflow-y: auto;
+}
+.project-title {
+  margin-bottom: 10px;
+  min-height: 48px;
+}
+
+/* Description styling */
+.project-description {
+  color: #2c2b2b;
+  max-width: 380px;
+  font-size: 0.95rem;
+}
+
+/* Image section */
+.project-image {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+.project-image img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Small devices - fix eye-catching height */
+@media (max-width: 768px) {
+  .project-slide {
+    min-height: 350px; /* fixed height for mobiles */
+  }
+  .project-description {
+    font-size: 0.85rem;
+  }
+}
+
+.github-btn {
+  background-color: #24292e; /* GitHub dark */
+  color: #ffffff;
+  border: none;
+  border-radius: 30px; /* pill look */
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.github-btn:hover {
+  background-color: #519891; /* GitHub blue */
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fab-nav-btn {
+  background: linear-gradient(135deg, #519891, #3d7a74);
+  color: #fff;
+  border: none;
+  border-radius: 50px; /* smooth pill shape */
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s ease;
+}
+
+/* Glow effect */
+.fab-nav-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: 0.6s;
+}
+
+.fab-nav-btn:hover::before {
+  top: -80%;
+  left: -80%;
+}
+
+/* Hover pop */
+.fab-nav-btn:hover {
+  background: linear-gradient(135deg, #3d7a74, #2a5b56);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Click effect */
+.fab-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.skill-item:hover {
+  color: #ff6600;
+  background-color: rgba(255, 102, 0, 0.1); /* light orange background */
+  border-radius: 8px;
+  transform: translateY(-5px);
+}
