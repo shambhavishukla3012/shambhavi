@@ -8,7 +8,6 @@ import nodemailer from 'nodemailer';
 
 dotenv.config();
 
-// ---- ENV CHECKS ----
 if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASS || !process.env.ADMIN_EMAIL) {
   throw new Error('Missing env: GMAIL_USER, GMAIL_APP_PASS, ADMIN_EMAIL');
 }
@@ -16,32 +15,29 @@ if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASS || !process.env.ADMIN
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ---- CORS ----
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://my-portfolio-f933.vercel.app'],
+  origin: ['http://localhost:5173', 'https://shambhavishukla.vercel.app/'],
   methods: ['POST', 'GET'],
 }));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// ---- RATE LIMIT ----
 app.use('/send-email', rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000, 
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,
   message: 'Too many requests from this IP, please try again later.',
 }));
 
-// ---- UPLOAD (multer) ----
 const ALLOWED_MIME = new Set([
   'application/pdf',
-  'application/msword', // .doc
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .docx
-  'application/vnd.ms-excel', // .xls
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
-  'text/csv', // .csv
+  'application/msword', 
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.ms-excel',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'text/csv', 
   'image/jpeg',
   'image/png',
   'image/gif',
@@ -49,7 +45,7 @@ const ALLOWED_MIME = new Set([
 ]);
 
 const upload = multer({
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
+  limits: { fileSize: 10 * 1024 * 1024 }, 
   fileFilter: (_req, file, cb) => {
     if (!ALLOWED_MIME.has(file.mimetype)) {
       return cb(new Error('Unsupported file type. Allowed: PDF, DOC, DOCX, XLS, XLSX, CSV, JPG, JPEG, PNG, GIF, MP4'));
@@ -58,7 +54,6 @@ const upload = multer({
   }
 });
 
-// ---- SMTP TRANSPORT (Gmail App Password) ----
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -67,16 +62,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// ---- HEALTH ----
 app.get('/', (_req, res) => res.status(200).send('OK'));
 
-// ---- SEND EMAIL ----
+
 app.post('/send-email', upload.single('attachment'), async (req, res) => {
   try {
     const { firstName, lastName, email, phone, message } = req.body;
     const attachment = req.file;
 
-    // Basic validation
     if (!firstName || !lastName || !email || !message) {
       return res.status(400).send('All required fields must be filled.');
     }
@@ -87,6 +80,7 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
       content: attachment.buffer,       
       contentType: attachment.mimetype,
     }] : [];
+
 
     const adminSubject = `New Contact Form: ${firstName} ${lastName}`;
     const adminText =

@@ -15,7 +15,7 @@ const Projects = () => {
       title: "Route Optimizer",
       description:
         "A Flask-based web application that helps users plan and visualize efficient travel routes with interactive mapping capabilities.",
-      image: "/MyPortfolio/images/ro.jpeg",
+      image: "/shambhavi/images/ro.jpeg",
       technologies: ["Python", "Flask", "APIs", "PostgreSQL"],
       githubLink: "https://github.com/shambhavishukla3012/route-opitmizer",
     },
@@ -24,7 +24,7 @@ const Projects = () => {
       title: "Wellness Tracking System",
       description:
         "Wellness app with personalized plans integrating search, Google Auth 2FA, and chat feature. Scalable with Docker.",
-      image: "/MyPortfolio/images/wts.jpeg",
+      image: "/shambhavi/images/wts.jpeg",
       technologies: ["PostgreSQL", "React", "Django", "Docker"],
       githubLink:
         "https://github.com/shambhavishukla3012/WellnessTrackingSystem/tree/main/base",
@@ -34,7 +34,7 @@ const Projects = () => {
       title: "Netflix Database Application",
       description:
         "Data-driven app to explore Netflix entries. Boosted performance by 30% with optimized PostgreSQL CRUD APIs.",
-      image: "/MyPortfolio/images/flixiq.jpeg",
+      image: "/shambhavi/images/flixiq.jpeg",
       technologies: ["PostgreSQL", "Bootstrap", "Flask"],
       githubLink: "https://github.com/shambhavishukla3012/FlixIQ",
     },
@@ -43,7 +43,7 @@ const Projects = () => {
       title: "H&M Fashion Recommendation",
       description:
         "Conducted EDA on 31M records, uncovering key product trends, and optimizing product recommendations. Optimized data processing with Parquet, reducing disk space by 50% and boosting data loading speed for efficient analysis.",
-      image: "/MyPortfolio/images/hfr.jpeg",
+      image: "/shambhavi/images/hfr.jpeg",
       technologies: [
         "Python",
         "Data Mining",
@@ -60,7 +60,7 @@ const Projects = () => {
       title: "CarbonScope",
       description:
         "Configured AWS infrastructure for real-time carbon emissions tracking across 50+ US airports. Automated OpenSky API data ingestion via Lambda and EventBridge, storing in S3.",
-      image: "/MyPortfolio/images/cs.png",
+      image: "/shambhavi/images/cs.png",
       technologies: ["AWS Lambda", "S3", "EC2", "EventBridge"],
       githubLink: "#",
       // demoLink: "#",
