@@ -9,7 +9,7 @@ const EducationExperience = () => {
 const experiences = [
   {
     id: 1,
-    title: "Senior Software Engineer",
+    title: "Software Engineer",
     company: "University of Arizona",
     years: "Jun 2025 - Present",
     description:
