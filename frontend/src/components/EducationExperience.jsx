@@ -58,7 +58,7 @@ const experiences = [
   {
     id: 7,
     title: "Junior Software Engineer",
-    company: "Verzeo",
+    company: "CNC Web World Technologies Pvt. Ltd.",
     years: "Nov 2020 - Aug 2021, Aug 2017 - Apr 2018",
     description:
       "Contributed to backend development and system debugging, strengthening application reliability and preparing production-ready deployments.",
