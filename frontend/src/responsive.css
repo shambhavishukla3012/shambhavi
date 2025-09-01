@@ -1,4 +1,13 @@
+/* --------------------------------------------------------------------------
+   Super Responsive Enhancements (global, non-destructive)
+   - Mobile-first defaults
+   - Fluid typography via clamp()
+   - Images/videos scale within containers
+   - Layout helpers to prevent overflow on small screens
+   - Sensible breakpoints: 480, 768, 1024, 1280
+   -------------------------------------------------------------------------- */
 
+/* Use border-box for saner sizing */
 *,
 *::before,
 *::after {

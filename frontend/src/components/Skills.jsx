@@ -107,7 +107,7 @@ const Skills = () => {
   return (
     <section id="skills" ref={sectionRef} className="py-5">
       <Container>
-        <div className="section-title text-center mb-5">
+        <div className="section-title text-center mb-3">
           <h2>Skills</h2>
         </div>
 
@@ -115,7 +115,7 @@ const Skills = () => {
           {technologies.map((tech, index) => (
             <Col
               key={index}
-              xs={12} // full width on mobile
+              xs={12} 
               sm={6} // 2 per row on small screens
               md={3} // 3 per row on medium
               lg={2} // 4 per row on large

@@ -107,13 +107,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-5">
       <Container>
-        <div className="section-title">
+        <div className="section-title mb-2">
           <h2>Contact Me</h2>
           <p>Get in touch or just to say hi</p>
         </div>
 
         <Row>
-          <Col lg={6} className="mb-4 mb-lg-0">
+          <Col lg={6} className="mb-1 mb-lg-0">
             {submitted && (
               <Alert
                 variant="success"
@@ -125,7 +125,7 @@ const Contact = () => {
 
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
               <Row>
-                <Col md={6} className="mb-3">
+                <Col md={6} className="mb-2">
                   <Form.Group>
                     <Form.Label>First Name*</Form.Label>
                     <Form.Control
@@ -141,7 +141,7 @@ const Contact = () => {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Col>
-                <Col md={6} className="mb-3">
+                <Col md={6} className="mb-2">
                   <Form.Group>
                     <Form.Label>Last Name*</Form.Label>
                     <Form.Control
@@ -160,7 +160,7 @@ const Contact = () => {
               </Row>
 
               <Row>
-                <Col md={12} className="mb-3">
+                <Col md={12} className="mb-2">
                   <Form.Group>
                     <Form.Label>Email*</Form.Label>
                     <Form.Control
@@ -176,7 +176,7 @@ const Contact = () => {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Col>
-                <Col md={12} className="mb-3">
+                <Col md={12} className="mb-2">
                   <Form.Group>
                     <Form.Label>Phone Number</Form.Label>
                     <div className="d-flex">
@@ -207,7 +207,7 @@ const Contact = () => {
                 </Col>
               </Row>
 
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-2">
                 <Form.Label>Message*</Form.Label>
                 <Form.Control
                   required
@@ -223,7 +223,7 @@ const Contact = () => {
                 </Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group className="mb-4">
+              <Form.Group className="mb-2">
                 <Form.Label>Attachment</Form.Label>
                 <Form.Control
                   type="file"
@@ -251,110 +251,100 @@ const Contact = () => {
             </Form>
           </Col>
 
-          <Col lg={6}>
-            <div
-              className="contact-info p-4 rounded shadow h-100"
-              style={{ backgroundColor: "white", color: "#333" }}>
-              <h3 className="mb-4">Contact Information</h3>
-
-              <div className="d-flex mb-4">
+    <Col lg={6}>
+            <div className="contact-info p-4 rounded shadow h-100" style={{ backgroundColor: 'white',color: '#333' }}>
+              <h3 className="mb-3">Contact Information</h3>
+              
+              <div className="d-flex mb-2">
                 <div className="contact-icon me-3">
-                  <i
-                    className="fas fa-map-marker-alt"
-                    style={{
-                      fontSize: "24px",
-                      color: "var(--dark-green)",
-                    }}></i>
+                  <i className="fas fa-map-marker-alt" style={{ fontSize: '24px', color: 'var(--dark-green)' }}></i>
                 </div>
                 <div className="contact-details">
                   <h5 className="mb-1">Indianapolis</h5>
                   <p>Indiana, USA</p>
                 </div>
               </div>
-
-              <div className="d-flex mb-4">
+              
+              <div className="d-flex mb-2">
                 <div className="contact-icon me-3">
-                  <i
-                    className="fas fa-envelope"
-                    style={{
-                      fontSize: "24px",
-                      color: "var(--dark-green)",
-                    }}></i>
+                  <i className="fas fa-envelope" style={{ fontSize: '24px', color: 'var(--dark-green)' }}></i>
                 </div>
                 <div className="contact-details">
                   <h5 className="mb-1">Email</h5>
                   <p>shambhavishukla844@gmail.com</p>
                 </div>
               </div>
-
-              <div
-                className="map-container mt-4 rounded overflow-hidden"
-                style={{ height: "300px" }}>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96490.39245503732!2d-86.25198901778213!3d39.7684031353314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b506f74e11f5b%3A0xd6aaeb52e6c8f7e5!2sIndianapolis%2C%20IN%2C%20USA!5e0!3m2!1sen!2sus!4v1713042396023!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
+              
+              <div className="map-container mt-2 rounded overflow-hidden" style={{ height: '150px' }}>
+                <iframe 
+                  // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059445135!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sca!4v1612293767392!5m2!1sen!2sca" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96490.39245503732!2d-86.25198901778213!3d39.7684031353314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b506f74e11f5b%3A0xd6aaeb52e6c8f7e5!2sIndianapolis%2C%20IN%2C%20USA!5e0!3m2!1sen!2sus!4v1713042396023!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
                   loading="lazy"
-                  title="Location Map"></iframe>
+                  title="Location Map"
+                ></iframe>
               </div>
-
+              
               <div className="social-links mt-4 text-center">
-                <h5 className="mb-3">Connect With Me</h5>
+                <h5 className="mb-1">Connect With Me</h5>
                 <div className="d-flex justify-content-center">
-                  <a
-                    href="https://github.com/shambhavishukla3012"
-                    target="_blank"
+                  <a 
+                    href="https://github.com/shambhavishukla3012" 
+                    target="_blank" 
                     rel="noopener noreferrer"
                     className="social-icon mx-2"
-                    style={{
-                      display: "inline-block",
-                      width: "40px",
-                      height: "40px",
-                      lineHeight: "40px",
-                      borderRadius: "50%",
-                      backgroundColor: "var(--dark-green)",
-                      color: "white",
-                      textAlign: "center",
-                      transition: "all 0.3s",
-                      textDecoration: "none",
+                    style={{ 
+                      display: 'inline-block',
+                      width: '40px',
+                      height: '40px',
+                      lineHeight: '40px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--dark-green)',
+                      color: 'white',
+                      textAlign: 'center',
+                      transition: 'all 0.3s',
+                      textDecoration: 'none'
                     }}
                     onMouseOver={(e) => {
-                      e.target.style.backgroundColor = "var(--light-green)";
-                      e.target.style.transform = "translateY(-3px)";
+                      e.target.style.backgroundColor = 'var(--light-green)';
+                      e.target.style.transform = 'translateY(-3px)';
                     }}
                     onMouseOut={(e) => {
-                      e.target.style.backgroundColor = "var(--dark-green)";
-                      e.target.style.transform = "translateY(0)";
-                    }}>
+                      e.target.style.backgroundColor = 'var(--dark-green)';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a
-                    href="https://linkedin.com/in/shambhavishukla844"
-                    target="_blank"
+                  <a 
+                    href="https://linkedin.com/in/shambhavishukla844" 
+                    target="_blank" 
                     rel="noopener noreferrer"
                     className="social-icon mx-2"
-                    style={{
-                      display: "inline-block",
-                      width: "40px",
-                      height: "40px",
-                      lineHeight: "40px",
-                      borderRadius: "50%",
-                      backgroundColor: "var(--dark-green)",
-                      color: "white",
-                      textAlign: "center",
-                      transition: "all 0.3s",
-                      textDecoration: "none",
+                    style={{ 
+                      display: 'inline-block',
+                      width: '40px',
+                      height: '40px',
+                      lineHeight: '40px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--dark-green)',
+                      color: 'white',
+                      textAlign: 'center',
+                      transition: 'all 0.3s',
+                      textDecoration: 'none'
                     }}
                     onMouseOver={(e) => {
-                      e.target.style.backgroundColor = "var(--light-green)";
-                      e.target.style.transform = "translateY(-3px)";
+                      e.target.style.backgroundColor = 'var(--light-green)';
+                      e.target.style.transform = 'translateY(-3px)';
                     }}
                     onMouseOut={(e) => {
-                      e.target.style.backgroundColor = "var(--dark-green)";
-                      e.target.style.transform = "translateY(0)";
-                    }}>
+                      e.target.style.backgroundColor = 'var(--dark-green)';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                 </div>

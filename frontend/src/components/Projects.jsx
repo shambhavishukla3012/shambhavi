@@ -66,84 +66,94 @@ const Projects = () => {
       // demoLink: "#",
     },
   ];
-
   return (
-    <>
+  
 
-   <div className="section-title text-center mb-5">
+    <div className="container mt-2 pt-3 pb-3">
+         <div className="section-title text-center mb-0">
           <h2>PROJECTS</h2>
         </div>
-    <div id="projects" className="container mt-2 pt-2 pb-2 position-relative">
-    <Carousel
-      activeIndex={index}
-      onSelect={handleSelect}
-      interval={3000}
-      indicators={false}
-      controls={false}
-      fade
-      className="w-75">
-      {projects.map((project) => (
-        <Carousel.Item key={project.id}>
-          <div className="project-slide d-flex flex-column flex-lg-row align-items-center gap-4">
-            <div className="project-text col-12 col-lg-6 p-4 d-flex flex-column justify-content-center text-center text-lg-end animate__animated animate__fadeInLeft">
-              <h2 className="fw-bold text-dark mb-3" style={{ fontSize: "28px" }}>
-                {project.title}
-              </h2>
-              <p className="project-description">{project.description}</p>
-              <div className="mb-3">
-                {project.technologies.map((tech, i) => (
-                  <Badge
-                    bg="dark"
-                    key={i}
-                    className="me-2 mb-2"
-                    style={{ fontSize: "0.8rem" }}>
-                    {tech}
-                  </Badge>
-                ))}
+          <div className="mx-auto" style={{ maxWidth: 900 }}>
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        interval={3000}
+        indicators={false}
+        controls={false} 
+        fade
+        className="w-100">
+        {projects.map((project) => (
+          <Carousel.Item key={project.id}>
+            <div className="project-slide d-flex flex-column flex-md-row align-items-stretch">
+              {/* Left side - Text */}
+              <div className="project-text p-4 d-flex flex-column justify-content-center align-items-center align-items-md-end text-center text-md-end animate__animated animate__fadeInLeft">
+                <h2
+                  className="fw-bold text-dark mb-3 "
+                  style={{ fontSize: "34px" }}>
+                  {project.title}
+                </h2>
+
+                <p className="project-description">{project.description}</p>
+
+                <div className="mb-3  ">
+                  {project.technologies.map((tech, i) => (
+                    <Badge
+                      bg="dark"
+                      key={i}
+                      className="me-2 mb-2"
+                      style={{ fontSize: "0.8rem" }}>
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+
+                <Button
+                  href={project.githubLink}
+                  target="_blank"
+                  size="sm"
+                  className="github-btn d-flex align-items-center gap-2 px23 py-2">
+                  <Github size={18} /> View on GitHub
+                </Button>
               </div>
-              <Button
-                href={project.githubLink}
-                target="_blank"
-                size="sm"
-                className="github-btn d-flex align-items-center gap-2 px-3 py-2">
-                <Github size={18} /> View on GitHub
-              </Button>
+
+              <div className="project-image d-flex justify-content-center align-items-center p-1">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="img-fluid w-100 rounded shadow "
+                  style={{ height: "400px" }}
+                />
+              </div>
             </div>
-  
-            {/* Right side - Image */}
-            <div className="project-image col-12 col-lg-6 d-flex justify-content-center align-items-center p-2">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="img-fluid w-100 rounded shadow"
-                style={{
-                  maxHeight: "400px",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-          </div>
-        </Carousel.Item>
-      ))}
-    </Carousel>
-  
-    {/* Custom Prev/Next Controls - overlayed */}
-    <Button
-      onClick={() =>
-        setIndex(index === 0 ? projects.length - 1 : index - 1)
-      }
-      className="fab-nav-btn position-absolute bottom-0 start-0 translate-middle-y d-flex align-items-center  px-3 py-2">
-      <ChevronLeft size={22} />
-    </Button>
-  
-    <Button
-      onClick={() => setIndex((index + 1) % projects.length)}
-      className="fab-nav-btn position-absolute bottom-0 end-0 translate-middle-y d-flex align-items-center  px-3 py-2">
-      <ChevronRight size={22} />
-    </Button>
-  </div>
-  </>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
+      <div className="text-center mt-4">
+        <div className="d-flex justify-content-center align-items-center gap-4">
+     <Button
+  onClick={() =>
+    setIndex(index === 0 ? projects.length - 1 : index - 1)
+  }
+  size="lg"
+  className="learn-more"
+>
+  <ChevronLeft size={15} /> Prev
+</Button>
+
+<Button
+  onClick={() => setIndex((index + 1) % projects.length)}
+  size="lg"
+  className="get-btn"
+>
+  Next <ChevronRight size={15} />
+</Button>
+        </div>
+      </div>
+    </div>
+
   );
 };
+
 
 export default Projects;

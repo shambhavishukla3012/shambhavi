@@ -19,7 +19,7 @@ const experiences = [
     id: 2,
     title: "Lead Software Engineer",
     company: "Project 990",
-    years: "Mar 2025 - Jun 2025",
+    years: "Mar 2025 - Jul 2025",
     description:
       "Led an 8-member team to build a multi-tenant AWS platform with analytics dashboards, streamlining deployments and boosting nonprofit fundraising efficiency.",
   },
@@ -27,7 +27,7 @@ const experiences = [
     id: 3,
     title: "Software Engineer",
     company: "Pointel",
-    years: "Dec 2024 - Mar 2025",
+    years: "Nov 2024 - Mar 2025",
     description:
       "Developed Spring Boot microservices integrating Genesys Cloud APIs, improving call flows and agent productivity across enterprise contact centers.",
   },
@@ -99,7 +99,7 @@ const experiences = [
               fontWeight: "700",
               color: "var(--dark-green)",
               textAlign: "center",
-              marginBottom: "10px",
+              marginBottom: "5px",
             }}>
             Education & Experience
           </h2>
@@ -109,7 +109,7 @@ const experiences = [
           id="education-experience-tabs"
           activeKey={activeKey}
           onSelect={(k) => setActiveKey(k)}>
-          <Row className="justify-content-center mb-5">
+          <Row className="justify-content-center mb-3">
             <Col md={8} lg={6}>
               <Nav
                 className="nav-tabs-custom d-flex"
@@ -161,7 +161,6 @@ const experiences = [
               <div
                 className="timeline-container"
                 style={{ position: "relative" }}>
-                {/* Vertical line */}
                 <div
                   style={{
                     position: "absolute",
@@ -252,6 +251,13 @@ const experiences = [
                     backgroundColor: "#e0e0e0",
                     zIndex: "0",
                   }}></div>
+    <div
+      style={{
+        maxHeight: "400px",   
+        overflowY: "auto",
+        paddingRight: "10px",
+      }}
+    >
 
                 {experiences.map((exp) => (
                   <div
@@ -315,6 +321,7 @@ const experiences = [
                     </div>
                   </div>
                 ))}
+              </div>
               </div>
             </Tab.Pane>
           </Tab.Content>

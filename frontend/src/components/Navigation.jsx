@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { ThemeContext } from "../context/ThemeContext";
 import "./Navigation.css";
 
-const Navigation = () => {
-  const [activeLink, setActiveLink] = useState("home");
-  const [scrolled, setScrolled] = useState(false);
+const Navigation = ({ activeSection }) => {
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
-
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -19,10 +20,12 @@ const Navigation = () => {
       expand="lg"
       fixed="top"
       style={{
-        backgroundColor: scrolled ? "var(--navbar-bg)" : "var(--background)",
+        backgroundColor:
+          activeSection !== "home" ? "var(--navbar-bg)" : "var(--background)",
         transition: "all 0.3s ease-in-out",
-        boxShadow: scrolled ? "0 2px 10px rgba(0,0,0,0.1)" : "none",
-        backdropFilter: scrolled ? "blur(10px)" : "none",
+        boxShadow:
+          activeSection !== "home" ? "0 2px 10px rgba(0,0,0,0.1)" : "none",
+        backdropFilter: activeSection !== "home" ? "blur(10px)" : "none",
       }}
     >
       <Container style={{ maxWidth: "1200px" }}>
@@ -43,22 +46,18 @@ const Navigation = () => {
                 key={item.id}
                 href={`#${item.id}`}
                 className={
-                  activeLink === item.id ? "active navbar-link" : "navbar-link"
+                  activeSection === item.id
+                    ? "active navbar-link"
+                    : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink(item.id)}
+                onClick={(e) => handleNavClick(e, item.id)}
               >
-                {item.label} 
+                {item.label}
               </Nav.Link>
             ))}
 
             {/* Theme toggle button */}
-            <div
-              style={{
-                marginLeft: "20px",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
+            <div className="ms-3 flex items-center">
               <button
                 onClick={toggleTheme}
                 className="theme-toggle-btn"
@@ -72,7 +71,6 @@ const Navigation = () => {
                   width: "38px",
                   height: "38px",
                   borderRadius: "50%",
-                  padding: "8px",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
                 }}

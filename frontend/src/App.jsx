@@ -14,29 +14,31 @@ function App() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      let current = "home";
+    const sections = document.querySelectorAll("section");
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // 50% of section must be visible
+      }
+    );
 
-      setActiveSection(current);
-    };
+    sections.forEach((section) => observer.observe(section));
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <ThemeProvider>
       <div className="App scroll-smooth">
         <Navigation activeSection={activeSection} />
-        
+
         <section id="home" className="min-h-screen flex items-center justify-center">
           <Hero />
         </section>
