@@ -88,7 +88,7 @@ const experiences = [
     <section
       id="education-experience"
       style={{
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--offwhite)",
         minHeight: "100vh",
       }}>
       <Container style={{ maxWidth: "1200px" }}>

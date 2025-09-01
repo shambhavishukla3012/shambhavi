@@ -8,9 +8,9 @@ const Hero = () => {
       id="home"
       className="hero-section"
       style={{
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "var(--offwhite)",
         paddingTop: "120px",
-        paddingBottom: "80px",
+        paddingBottom: "100px",
         display: "flex",
         alignItems: "center",
       }}>
