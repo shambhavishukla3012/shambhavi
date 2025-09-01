@@ -5,7 +5,7 @@ import { faDownload, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import './About.css'
 const About = () => {
   const handleViewResume = () => {
-    window.open("src/Resume.pdf", "_blank");
+    window.open("/Resume.pdf", "_blank");
   };
 
   return (
