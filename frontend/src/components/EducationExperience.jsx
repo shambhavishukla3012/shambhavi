@@ -6,48 +6,64 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 const EducationExperience = () => {
   const [activeKey, setActiveKey] = useState("experience");
 
-  const experiences = [
-    {
-      id: 1,
-      title: "Software Engineer",
-      company: "Pointel",
-      years: "Dec 2024 - Present",
-      description:
-        "Collaborated on the development of a proprietary Genesys Cloud tool to enhance Agent Utilization Rate by 20% and decrease Average Handle Time by 15%. Delivered 400+ user stories with acceptance criteria in Azure DevOps, resulting in 95% sprint goal attainment, and streamlined client onboarding with tailored training materials decreasing call transfer rate by 15%.",
-    },
-    {
-      id: 2,
-      title: "Software Engineer",
-      company: "Hoosier Community Network",
-      years: "May 2024 - Nov 2024",
-      description:
-        "Implemented automated cost optimization using AWS Budgets, SNS, and Lambda functions to monitor cost thresholds and terminate non-critical resources, reducing monthly cloud expenditure by 28%. Built a full-stack web app for project management with Tableau integration, user authentication, and search/filtering, reducing user onboarding time by 25% and improving project discovery accuracy by 30%.",
-    },
-    {
-      id: 3,
-      title: "Associate Research Instructor",
-      company: "Indiana University Bloomington",
-      years: "Aug 2023 - Nov 2024",
-      description:
-        "Led 4 Agile full-stack projects, streamlining the development process using Git and Jira, which resulted in a 15% increase in sprint velocity and enhanced team collaboration. Conducted over 50 training sessions for 500+ students on full-stack development frameworks and DevOps tools.",
-    },
-    {
-      id: 4,
-      title: "Software Engineer",
-      company: "Tech Mahindra",
-      years: "Aug 2021 - Jul 2022",
-      description:
-        "Implemented CRM system for State Bank of India, creating and managing workflows using Informatica Powercenter and automating tasks in UAT/production using Linux shell scripts. Optimized PL/SQL queries for report generation, reducing time by 40%, and improved data accuracy by debugging ETL workflows.",
-    },
-    {
-      id: 5,
-      title: "Software Engineer",
-      company: "CNC Web World Technologies Pvt. Ltd.",
-      years: "Nov 2020 - Aug 2021",
-      description:
-        "Revamped backend architecture by implementing RESTful APIs and integrating MongoDB with Node.js using Mongoose ODM, reducing system errors by 20%. Built a Django website increasing event outreach by 60% and conducted workshops for over 200 female students.",
-    },
-  ];
+const experiences = [
+  {
+    id: 1,
+    title: "Senior Software Engineer",
+    company: "University of Arizona",
+    years: "Jun 2025 - Present",
+    description:
+      "Re-architected a multilingual backend by migrating 30+ APIs to Spring Boot/SQLite with Docker, reducing costs and improving performance for 10K+ users.",
+  },
+  {
+    id: 2,
+    title: "Lead Software Engineer",
+    company: "Project 990",
+    years: "Mar 2025 - Jun 2025",
+    description:
+      "Led an 8-member team to build a multi-tenant AWS platform with analytics dashboards, streamlining deployments and boosting nonprofit fundraising efficiency.",
+  },
+  {
+    id: 3,
+    title: "Software Engineer",
+    company: "Pointel",
+    years: "Dec 2024 - Mar 2025",
+    description:
+      "Developed Spring Boot microservices integrating Genesys Cloud APIs, improving call flows and agent productivity across enterprise contact centers.",
+  },
+  {
+    id: 4,
+    title: "Software Consultant",
+    company: "Hoosier Community Network",
+    years: "May 2024 - Nov 2024",
+    description:
+      "Built a full-stack project management app with Tableau integration and automated AWS cost optimization, enhancing efficiency and reducing expenses.",
+  },
+  {
+    id: 5,
+    title: "Associate Research Instructor",
+    company: "Indiana University Bloomington",
+    years: "Aug 2023 - Nov 2024",
+    description:
+      "Directed Agile full-stack projects and delivered 30+ technical sessions, improving sprint velocity and deployment success for hundreds of students.",
+  },
+  {
+    id: 6,
+    title: "Software Engineer",
+    company: "Tech Mahindra",
+    years: "Aug 2021 - Jul 2022",
+    description:
+      "Engineered 140+ ETL pipelines and automated data ingestion across CRM and banking systems, cutting processing time and enhancing data accuracy.",
+  },
+  {
+    id: 7,
+    title: "Junior Software Engineer",
+    company: "Verzeo",
+    years: "Nov 2020 - Aug 2021, Aug 2017 - Apr 2018",
+    description:
+      "Contributed to backend development and system debugging, strengthening application reliability and preparing production-ready deployments.",
+  },
+];
 
   const education = [
     {

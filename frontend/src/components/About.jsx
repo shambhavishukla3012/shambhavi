@@ -27,7 +27,7 @@ const About = () => {
               fontWeight: "700",
               color: "var(--dark-green)",
               textAlign: "center",
-              marginBottom: "50px",
+              marginBottom: "20px",
             }}>
             About Me
           </h2>
@@ -57,15 +57,11 @@ const About = () => {
                 fontSize: "14px",
                 lineHeight: "1.4",
                 color: "var(--blue)",
-                marginBottom: "20px",
+                marginBottom: "5px",
                 textAlign: "justify",
                 padding: "10px",
               }}>
-              I'm a passionate full stack developer with a focus on building
-              modern, responsive, and user-centric web applications. I hold a
-              Computer Science degree from Indiana University Bloomington (May
-              2024) and currently contribute my skills to Project990, a
-              nonprofit organization creating digital solutions for social good.
+      I’m a software engineer with a Master’s in Computer Science, and I enjoy designing systems that are reliable, scalable, and efficient. I’ve worked on projects across nonprofits, enterprise contact centers, large financial institutions, and startups, where I built cloud-native applications, designed microservices, and mentored teams through collaborative practices.
             </p>
             <p
               style={{
@@ -73,31 +69,20 @@ const About = () => {
                 lineHeight: "1.4",
                 color: "var(--blue)",
                 textAlign: "justify",
-                marginBottom: "20px",
+                marginBottom: "5px",
                 padding: "10px",
               }}>
-              Previously, I worked closely with early-stage startups through an
-              entrepreneurship cell, helping them build and scale their tech
-              foundations. I’ve also led workshops to empower women by
-              developing their entrepreneurial, social, and interpersonal
-              skills—an initiative close to my heart.
-            </p>
+         My recent work has focused on streamlining APIs, improving performance for large user bases, and leading migrations that simplify infrastructure while reducing costs. These experiences taught me the value of building systems that last while keeping people at the center. For me, engineering is not just about writing code. It is about curiosity, collaboration, and creating solutions with lasting impact. I believe the best results come from environments where ideas are nurtured, perspectives are valued, and progress is built together.</p>
             <p
               style={{
                 fontSize: "14px",
                 lineHeight: "1.4",
                 color: "var(--blue)",
-                marginBottom: "25px",
+                marginBottom: "15px",
                 textAlign: "justify",
                 padding: "10px",
               }}>
-              Outside of tech, I stay grounded through community service and
-              creative expression. I regularly volunteer for environmental
-              causes and hold a master’s distinction in Bharatanatyam, a
-              classical Indian dance form that fuels my creativity and
-              discipline. Tech, impact, and art shape who I am—and I’m always
-              eager to take on challenges that sit at the intersection of all
-              three.
+       Outside of work, I enjoy mentoring, exploring creative projects, and staying engaged with my community. I also hold a master’s distinction in Bharatanatyam, a classical Indian dance form. Both dance and engineering have shaped my discipline and creativity, giving me balance and a fresh perspective that I bring into everything I do.
             </p>
             <div className="d-flex mt-4">
               <Button

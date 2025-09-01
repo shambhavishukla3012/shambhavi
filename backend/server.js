@@ -22,7 +22,7 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: (origin, cb) => {
-    if (!origin) return cb(null, true);                // allow same-origin / curl
+    if (!origin) return cb(null, true);              
     return allowedOrigins.includes(origin)
       ? cb(null, true)
       : cb(new Error('Not allowed by CORS'));
