@@ -109,7 +109,6 @@ const Skills = () => {
       <Container>
         <div className="section-title text-center mb-5">
           <h2>Skills</h2>
-          <p>Here are the technologies and tools I work with regularly</p>
         </div>
 
         <Row>

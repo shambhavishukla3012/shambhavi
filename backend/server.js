@@ -17,21 +17,22 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://shambhavishukla.vercel.app',   
+  'https://shambhavishukla.vercel.app',
 ];
 
-app.use(cors({
+const corsOptions = {
   origin: (origin, cb) => {
-    if (!origin) return cb(null, true);
+    if (!origin) return cb(null, true);                // allow same-origin / curl
     return allowedOrigins.includes(origin)
       ? cb(null, true)
       : cb(new Error('Not allowed by CORS'));
   },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+  optionsSuccessStatus: 204,
+};
 
-app.options('*', cors());
+app.use(cors(corsOptions)); 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
