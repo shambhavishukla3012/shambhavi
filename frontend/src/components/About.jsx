@@ -35,7 +35,7 @@ const About = () => {
         <Row className="align-items-center">
           <Col lg={5} className="text-center mb-4 mb-lg-0">
             <img
-              src="/shambhavi/images/me.JPG"
+              src="/images/me.JPG"
               alt="Workspace"
               className="img-fluid"
               style={{
