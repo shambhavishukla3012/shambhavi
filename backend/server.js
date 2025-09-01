@@ -15,10 +15,23 @@ if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASS || !process.env.ADMIN
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://shambhavishukla.vercel.app',   
+];
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://shambhavishukla.vercel.app/'],
-  methods: ['POST', 'GET'],
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
+    return allowedOrigins.includes(origin)
+      ? cb(null, true)
+      : cb(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
+app.options('*', cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
